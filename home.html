@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scrum Board</title>
+
+    <style>
+      body {
+        font-family: "Courier New", Courier, monospace;
+        text-align: center;
+      }
+      .card-type-design {
+        height: 50px;
+        width: 100px;
+        border-radius: 10%;
+      }
+      #various-card-designs {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: center;
+        margin: 40px 0px -10px 0px;
+      }
+      #ux-card-design {
+        background-image: linear-gradient(
+          45deg,
+          #ff9a9e 0%,
+          #fad0c4 99%,
+          #fad0c4 100%
+        );
+      }
+      #frontend-card-design {
+        background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+      }
+      #backend-card-design {
+        background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+      }
+      header {
+        padding: 20px;
+        background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+      }
+      main {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        margin: 30px;
+      }
+      .tasks-container {
+        border: 1px solid black;
+        width: 25%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Scrum Board</h1>
+      <form action="">
+        <input type="text" placeholder="Enter text" />
+        <select name="dev-type" id="dev-type">
+          <option value="UX">UX</option>
+          <option value="dev frontend">Dev frontend</option>
+          <option value="dev backend">Dev backend</option>
+        </select>
+        <button type="submit">Add</button>
+      </form>
+      <div id="various-card-designs">
+        <div class="card-type-design" id="ux-card-design">UX</div>
+        <div class="card-type-design" id="frontend-card-design">
+          Dev frontend
+        </div>
+        <div class="card-type-design" id="backend-card-design">Dev beckend</div>
+      </div>
+    </header>
+    <main>
+        <div class="tasks-container" id="to-do">
+            <h2>To Do</h2>
+        </div>
+        <div class="tasks-container" id="in-progress">
+            <h2>In Progress</h2>
+        </div>
+        <div class="tasks-container" id="done">
+            <h2>Done</h2>
+        </div>
+    </main>
+  </body>
+</html>

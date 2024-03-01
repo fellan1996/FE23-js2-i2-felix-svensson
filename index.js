@@ -1,15 +1,14 @@
 const express = require('express');
-const { readFile } = require('fs');
+const { readFile } = require('fs').promises;
 
 const app = express();
 
-app.get('/', (req, res) => {
-    readFile('./home.html', 'utf8', (err, html) => {
+app.get('/', async (req, res) => {
+    res.send( await readFile('./home.html', 'utf8', (err, html) => {
         if(err) {
             res.status(500).send('sorry, out of order')
         }
-        res.send(html);
-    })
+    }))
 })
 
 const port = process.env.PORT || 3000;
